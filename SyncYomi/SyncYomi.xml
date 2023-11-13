@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>SyncYomi</Name>
+  <Repository>ghcr.io/syncyomi/syncyomi:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Support>https://github.com/SyncYomi/SyncYomi/issues</Support>
+  <Project>https://github.com/SyncYomi/SyncYomi</Project>
+  <Overview>SyncYomi is an open-source project designed to offer a seamless synchronization experience for your Tachiyomi manga reading progress and library across multiple devices. This server can be self-hosted, allowing you to sync your Tachiyomi library effortlessly.&#xD;
+More info at: https://github.com/SyncYomi/SyncYomi</Overview>
+  <Category>Backup: MediaServer:Books Status:Beta</Category>
+  <WebUI>http://[IP]:[PORT:8282]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://github.com/SyncYomi/SyncYomi/blob/develop/.github/images/logo.png?raw=true</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1699880475</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/syncyomi/</Config>
+  <Config Name="WebUI" Target="8282" Default="8282" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8282</Config>
+</Container>
