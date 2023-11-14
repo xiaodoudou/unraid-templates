@@ -26,4 +26,7 @@ More info at: https://github.com/SyncYomi/SyncYomi</Overview>
   <Requires/>
   <Config Name="Config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/syncyomi/</Config>
   <Config Name="WebUI" Target="8282" Default="8282" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8282</Config>
+  <Config Name="TimeZone" Target="TZ" Default="Asia/Paris" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
 </Container>
