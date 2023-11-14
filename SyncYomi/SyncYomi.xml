@@ -7,13 +7,13 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support/>
-  <Project/>
   <Support>https://github.com/SyncYomi/SyncYomi/issues</Support>
   <Project>https://github.com/SyncYomi/SyncYomi</Project>
   <Overview>SyncYomi is an open-source project designed to offer a seamless synchronization experience for your Tachiyomi manga reading progress and library across multiple devices. This server can be self-hosted, allowing you to sync your Tachiyomi library effortlessly.&#xD;
-More info at: https://github.com/SyncYomi/SyncYomi</Overview>
+More info at: https://github.com/SyncYomi/SyncYomi&#xD;
+As for now this project rely on a specific Tachiyomi build available at: https://discord.gg/aydqBWAZs8</Overview>
   <Category>Backup: MediaServer:Books Status:Beta</Category>
+  <Beta>True</Beta>
   <WebUI>http://[IP]:[PORT:8282]/</WebUI>
   <TemplateURL/>
   <Icon>https://github.com/SyncYomi/SyncYomi/blob/develop/.github/images/logo.png?raw=true</Icon>
