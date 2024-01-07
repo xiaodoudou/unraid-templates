@@ -16,7 +16,7 @@ As for now this project rely on a specific Tachiyomi build available at: https:/
   <Beta>True</Beta>
   <WebUI>http://[IP]:[PORT:8282]/</WebUI>
   <TemplateURL/>
-  <Icon>https://github.com/SyncYomi/SyncYomi/blob/develop/.github/images/logo.png?raw=true</Icon>
+  <Icon>https://raw.githubusercontent.com/SyncYomi/SyncYomi/develop/.github/images/logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <CPUset/>
