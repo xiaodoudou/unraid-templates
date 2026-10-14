@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>homelabdash</Name>
+  <Repository>xiaodoudoufr/homelabdash:latest</Repository>
+  <Registry>https://hub.docker.com/r/xiaodoudoufr/homelabdash</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/xiaodoudou/homelabdash/issues</Support>
+  <Project>https://github.com/xiaodoudou/homelabdash</Project>
+  <ReadMe>https://github.com/xiaodoudou/homelabdash#readme</ReadMe>
+  <Overview>A self-hosted dashboard for your homelab, configured in one YAML file. Edit /config/homelabdash.yaml and the page follows every save; the first start writes a starter file to begin from. Tiles update live, can graph their last hour, and raise alerts you can dismiss. 16 plugins come built in, among them Tautulli, the arrs, Seerr, qBittorrent, SABnzbd, Docker, Unraid, apcupsd, AdGuard Home and OpenWrt, and you can write your own. There is no login by default, so keep it on your LAN or put it behind a reverse proxy that signs you in.</Overview>
+  <Category>Tools:Utilities Tools:System Productivity:</Category>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/xiaodoudou/unraid-templates/main/homelabdash/homelabdash.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/xiaodoudou/unraid-templates/main/homelabdash/icon.png</Icon>
+  <ExtraParams>--user 99:100 --group-add 281</ExtraParams>
+  <ExtraSearchTerms>dashboard homepage homelab startpage status monitoring</ExtraSearchTerms>
+  <Requires>Only the docker plugin needs the Docker socket. Extra Parameters adds the container to group 281; if stat -c %g /var/run/docker.sock prints another number on your server, use that one.</Requires>
+  <Changes>Release notes: https://github.com/xiaodoudou/homelabdash/releases</Changes>
+  <License>Apache-2.0</License>
+  <Screenshot>https://raw.githubusercontent.com/xiaodoudou/homelabdash/main/docs/ui/dashboard-dark.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/xiaodoudou/homelabdash/main/docs/ui/dashboard-light.png</Screenshot>
+  <Screenshot>https://raw.githubusercontent.com/xiaodoudou/homelabdash/main/docs/ui/phone-dark.png</Screenshot>
+  <Config Name="Web UI" Target="3000" Default="3000" Mode="tcp" Description="Port of the dashboard." Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/homelabdash" Mode="rw" Description="What you edit: homelabdash.yaml, secrets.yaml, and your own plugins, icons and custom.css." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/homelabdash</Config>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/homelabdash/data" Mode="rw" Description="What the dashboard writes itself: dismissed alerts, plugin state, graph history and cached icons." Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/homelabdash/data</Config>
+  <Config Name="Docker socket" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Only needed by the docker plugin, for container status and events." Type="Path" Display="advanced" Required="false" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="TZ" Target="TZ" Default="Etc/UTC" Description="Time zone for the clock and job schedules, such as Europe/Paris." Type="Variable" Display="advanced" Required="false" Mask="false">Etc/UTC</Config>
+</Container>

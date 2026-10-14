@@ -15,7 +15,7 @@ As for now this project rely on a specific Tachiyomi build available at: https:/
   <Category>Backup: MediaServer:Books Status:Beta</Category>
   <Beta>True</Beta>
   <WebUI>http://[IP]:[PORT:8282]/</WebUI>
-  <TemplateURL/>
+  <TemplateURL>https://raw.githubusercontent.com/xiaodoudou/unraid-templates/main/SyncYomi/SyncYomi.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/SyncYomi/SyncYomi/develop/.github/images/logo.png</Icon>
   <ExtraParams/>
   <PostArgs/>
