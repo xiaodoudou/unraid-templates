@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <CommunityApplications>
-  <Profile>Unraid templates kept by xiaodoudou: homelabdash, a homelab dashboard configured in one YAML file, and SyncYomi, a self-hosted server that keeps TachiyomiSY reading progress and libraries in sync between devices. Each template links to its project, and problems go to that project's GitHub issues.</Profile>
+  <Profile>Unraid templates kept by xiaodoudou: homelabdash, a homelab dashboard configured in one YAML file, PlexIPTV, which brings an IPTV subscription into Plex as live TV, and SyncYomi, a self-hosted server that keeps TachiyomiSY reading progress and libraries in sync between devices. Each template links to its project, and problems go to that project's GitHub issues.</Profile>
   <Icon>https://raw.githubusercontent.com/xiaodoudou/unraid-templates/main/icon.png</Icon>
   <WebPage>https://github.com/xiaodoudou/unraid-templates</WebPage>
 </CommunityApplications>

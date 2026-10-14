@@ -5,6 +5,7 @@ Unraid Docker templates, one folder per app:
 | Template | App |
 |---|---|
 | [homelabdash](homelabdash/homelabdash.xml) | [homelabdash](https://github.com/xiaodoudou/homelabdash), a homelab dashboard configured in one YAML file |
+| [PlexIPTV](PlexIPTV/PlexIPTV.xml) | [PlexIPTV](https://github.com/xiaodoudou/PlexIPTV), an IPTV subscription as live TV in Plex, by pretending to be an HDHomeRun tuner |
 | [SyncYomi](SyncYomi/SyncYomi.xml) | [SyncYomi](https://github.com/SyncYomi/SyncYomi), a self-hosted server that syncs TachiyomiSY reading progress and libraries |
 
 ## Installing one

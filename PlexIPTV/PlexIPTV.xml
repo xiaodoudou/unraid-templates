@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>PlexIPTV</Name>
+  <Repository>xiaodoudoufr/plexiptv:latest</Repository>
+  <Registry>https://hub.docker.com/r/xiaodoudoufr/plexiptv</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/xiaodoudou/PlexIPTV/issues</Support>
+  <Project>https://github.com/xiaodoudou/PlexIPTV</Project>
+  <ReadMe>https://github.com/xiaodoudou/PlexIPTV/blob/master/docs/docker.md</ReadMe>
+  <Overview>Makes an IPTV subscription show up as live TV in Plex, by pretending to be an HDHomeRun tuner. Give it an m3u playlist URL or an Xtream account, or several of each, and it filters, renames and numbers the channels, proxies the streams so your provider only ever sees one viewer, and serves an XMLTV guide with your channel logos. ffmpeg is included, for RTSP channels and HLS with fragmented MP4 segments. The first start writes settings.json into the config folder and prints a dashboard password in the container log, so open the log first. Put your provider in settings.json, restart the container, then add an HDHomeRun tuner in Plex at your server's address and port 1234. Apart from the dashboard there is no login, so keep it on your LAN.</Overview>
+  <Category>MediaApp:Video MediaServer:Video Network:Proxy</Category>
+  <WebUI>http://[IP]:[PORT:1234]/dashboard</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/xiaodoudou/unraid-templates/main/PlexIPTV/PlexIPTV.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/xiaodoudou/unraid-templates/main/PlexIPTV/icon.png</Icon>
+  <ExtraParams/>
+  <ExtraSearchTerms>iptv m3u xtream hdhomerun tuner live tv dvr epg xmltv plex</ExtraSearchTerms>
+  <Requires>An IPTV subscription: a playlist URL, or an Xtream server address, username and password.</Requires>
+  <Changes>Release notes: https://github.com/xiaodoudou/PlexIPTV/blob/master/CHANGELOG.md</Changes>
+  <License>Apache-2.0</License>
+  <Config Name="Tuner and dashboard" Target="1234" Default="1234" Mode="tcp" Description="Plex reaches the tuner on this port, and the dashboard is at /dashboard on it. If you change it, add the tuner in Plex with the new port." Type="Port" Display="always" Required="true" Mask="false">1234</Config>
+  <Config Name="Config" Target="/opt/PlexIPTV/config" Default="/mnt/user/appdata/plexiptv" Mode="rw" Description="settings.json, where your provider goes, and the cached playlist. Both are written on the first start." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/plexiptv</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Description="User PlexIPTV runs as. 99 is nobody, the usual owner of appdata. The container hands the config folder to this user when it starts." Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Description="Group PlexIPTV runs as. 100 is users." Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="Log folder" Target="PLEXIPTV_LOGDIR" Default="/opt/PlexIPTV/config/logs" Description="Where logs.txt is written. Inside the config folder, so it survives updates." Type="Variable" Display="advanced" Required="false" Mask="false">/opt/PlexIPTV/config/logs</Config>
+</Container>
