@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>SyncYomi</Name>
+  <Repository>ghcr.io/syncyomi/syncyomi:latest</Repository>
+  <Registry>https://github.com/SyncYomi/SyncYomi/pkgs/container/syncyomi</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/SyncYomi/SyncYomi/issues</Support>
+  <Project>https://github.com/SyncYomi/SyncYomi</Project>
+  <ReadMe>https://github.com/SyncYomi/SyncYomi#readme</ReadMe>
+  <Overview>Keeps your manga library and reading progress in sync between devices running TachiyomiSY or Komikku. Each device uploads its library to this server and downloads what the others changed, and the server keeps the last few versions so a bad sync can be rolled back from the web UI. The first start writes config.toml and a SQLite database into the config folder. Open the web UI, create an account, then create an API key under Settings, API Keys. Give every device the same key: each key is its own library.</Overview>
+  <Category>Backup: MediaServer:Books Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8282]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/xiaodoudou/unraid-templates/main/SyncYomi/SyncYomi.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/SyncYomi/SyncYomi/develop/.github/images/logo.png</Icon>
+  <ExtraParams/>
+  <ExtraSearchTerms>tachiyomi tachiyomisy komikku manga sync backup reading progress</ExtraSearchTerms>
+  <Requires>TachiyomiSY or Komikku on each device you want to sync.</Requires>
+  <Changes>Release notes: https://github.com/SyncYomi/SyncYomi/releases</Changes>
+  <License>GPL-2.0</License>
+  <Config Name="Web UI and sync" Target="8282" Default="8282" Mode="tcp" Description="The web UI, and the address your devices sync with. If you change it, use the new port in the apps too." Type="Port" Display="always" Required="true" Mask="false">8282</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/syncyomi" Mode="rw" Description="config.toml and the SQLite database holding every synced library. Back this folder up. Keep it on a cache or other local disk: SQLite needs WAL mode, which some network shares cannot provide." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/syncyomi</Config>
+</Container>
