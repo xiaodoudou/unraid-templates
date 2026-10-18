@@ -2,31 +2,23 @@
 <Container version="2">
   <Name>SyncYomi</Name>
   <Repository>ghcr.io/syncyomi/syncyomi:latest</Repository>
-  <Registry/>
+  <Registry>https://github.com/SyncYomi/SyncYomi/pkgs/container/syncyomi</Registry>
   <Network>bridge</Network>
-  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/SyncYomi/SyncYomi/issues</Support>
   <Project>https://github.com/SyncYomi/SyncYomi</Project>
-  <Overview>SyncYomi is an open-source project designed to offer a seamless synchronization experience for your Tachiyomi manga reading progress and library across multiple devices. This server can be self-hosted, allowing you to sync your Tachiyomi library effortlessly.&#xD;
-More info at: https://github.com/SyncYomi/SyncYomi&#xD;
-As for now this project rely on a specific Tachiyomi build available at: https://discord.gg/aydqBWAZs8</Overview>
-  <Category>Backup: MediaServer:Books Status:Beta</Category>
-  <Beta>True</Beta>
+  <ReadMe>https://github.com/SyncYomi/SyncYomi#readme</ReadMe>
+  <Overview>Keeps your manga library and reading progress in sync between devices running TachiyomiSY or Komikku. Each device uploads its library to this server and downloads what the others changed, and the server keeps the last few versions so a bad sync can be rolled back from the web UI. The first start writes config.toml and a SQLite database into the config folder. Open the web UI, create an account, then create an API key under Settings, API Keys. Give every device the same key: each key is its own library.</Overview>
+  <Category>Backup: MediaServer:Books Tools:</Category>
   <WebUI>http://[IP]:[PORT:8282]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/xiaodoudou/unraid-templates/main/SyncYomi/SyncYomi.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/SyncYomi/SyncYomi/develop/.github/images/logo.png</Icon>
   <ExtraParams/>
-  <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1699880475</DateInstalled>
-  <DonateText/>
-  <DonateLink/>
-  <Requires/>
-  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/syncyomi/</Config>
-  <Config Name="WebUI" Target="8282" Default="8282" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8282</Config>
-  <Config Name="TimeZone" Target="TZ" Default="Asia/Paris" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">Asia/Shanghai</Config>
-  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
-  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <ExtraSearchTerms>tachiyomi tachiyomisy komikku manga sync backup reading progress</ExtraSearchTerms>
+  <Requires>TachiyomiSY or Komikku on each device you want to sync.</Requires>
+  <Changes>Release notes: https://github.com/SyncYomi/SyncYomi/releases</Changes>
+  <License>GPL-2.0</License>
+  <Config Name="Web UI and sync" Target="8282" Default="8282" Mode="tcp" Description="The web UI, and the address your devices sync with. If you change it, use the new port in the apps too." Type="Port" Display="always" Required="true" Mask="false">8282</Config>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/syncyomi" Mode="rw" Description="config.toml and the SQLite database holding every synced library. Back this folder up. Keep it on a cache or other local disk: SQLite needs WAL mode, which some network shares cannot provide." Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/syncyomi</Config>
 </Container>
